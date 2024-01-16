@@ -1,5 +1,5 @@
 # Apple Calculator Clone
-Website address:https://tamirbanay.github.io/Apple-Calculator/
+Website address: https://tamirbanay.github.io/Apple-Calculator/
 
 
 ## Overview
