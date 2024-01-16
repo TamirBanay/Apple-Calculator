@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* This can help with keeping the background fixed during scroll */
+  background-size: cover;
   min-height: 100vh;
+}
+.displayResult {
+  min-height: 200px;
+}
+.buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 24px 14px;
+}
+.actions {
+  display: flex;
+  padding: 24px 21px 23px 21px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border-radius: 352px;
+  background: var(--Calculator-grey, #a5a5a5);
+  color: #000;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 78px;
+  height: 78px;
+  border: 0px;
 }
-
-.App-link {
-  color: #61dafb;
+.number {
+  display: flex;
+  width: 78px;
+  height: 78px;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 352px;
+  background: var(--Calculator-black, #333);
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 0px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.operations {
+  display: flex;
+  width: 78px;
+  height: 78px;
+  padding: 12px 30px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 352px;
+  background: var(--Calculator-orange, #f1a33b);
+  fill: var(--Calculator-orange, #f1a33b);
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 0px;
+}
+.zeroButton {
+  display: flex;
+  width: 170px;
+  padding: 20px 130px 20px 35px;
+  align-items: center;
+  border-radius: 352px;
+  background: var(--Calculator-black, #333);
+  color: #fff;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 0px;
 }

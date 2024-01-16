@@ -1,24 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [result, setResult] = useState(0);
+
+  const buttons = [
+    "AC",
+    "+/-",
+    "%",
+    "/",
+    7,
+    8,
+    9,
+    "X",
+    4,
+    5,
+    6,
+    "-",
+    1,
+    2,
+    3,
+    "+",
+    0,
+    ",",
+    "=",
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="displayResult"></div>
+      <div className="buttons">
+        {buttons.map((button, index) => (
+          <button
+            className={
+              button === "AC" || button === "+/-" || button === "%"
+                ? "actions"
+                : button === "X" ||
+                  button === "-" ||
+                  button === "+" ||
+                  button === "=" ||
+                  button === "/" ||
+                  button === "-"
+                ? "operations"
+                : button === 0
+                ? "zeroButton"
+                : "number"
+            }
+            key={index}
+          >
+            {button}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
