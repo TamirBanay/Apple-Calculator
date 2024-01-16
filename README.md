@@ -1,4 +1,4 @@
-# Apple Calculator Clone
+# Apple Calculator Clone (Mobile app)
 Website address: https://tamirbanay.github.io/Apple-Calculator/
 
 
