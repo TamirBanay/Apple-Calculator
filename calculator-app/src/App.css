@@ -119,6 +119,7 @@ body {
 .zeroButton {
   display: flex;
   width: 170px;
+  height: 78px;
   padding: 20px 130px 20px 35px;
   align-items: center;
   border-radius: 352px;
