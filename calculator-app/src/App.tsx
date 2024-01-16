@@ -11,21 +11,34 @@ function App() {
   );
 
   const handleButtonClick = (button: number | string) => {
+    // Handling operation button selection for UI purposes
     if (typeof button === "string" && ["+", "-", "x", "÷"].includes(button)) {
       setSelectedOperation(button);
-    }
-    if (button === "AC") {
-      setSelectedOperation(null);
+
+      if (currentInput !== "" && firstInput === null) {
+        setFirstInput(parseFloat(currentInput));
+      }
+
+      setOperation(button);
+      return; // Exit early
     }
 
     if (typeof button === "number" || button === ".") {
-      setCurrentInput(currentInput + button.toString());
+      if (operation !== null && firstInput !== null) {
+        // Clear current input only when starting to enter the second number
+        setCurrentInput(button.toString());
+        setFirstInput(parseFloat(currentInput));
+      } else {
+        // Append number or dot to current input
+        setCurrentInput(currentInput + button.toString());
+      }
     } else {
       switch (button) {
         case "AC":
           setCurrentInput("");
           setFirstInput(null);
           setOperation(null);
+          setSelectedOperation(null);
           break;
         case "+/-":
           setCurrentInput(
@@ -39,22 +52,15 @@ function App() {
           break;
         case "=":
           if (operation && firstInput !== null) {
-            const result = calculate(
-              firstInput,
-              parseFloat(currentInput),
-              operation
-            );
+            const parsedCurrentInput = parseFloat(currentInput);
+            const result = calculate(firstInput, parsedCurrentInput, operation);
             setCurrentInput(result.toString());
             setFirstInput(null);
             setOperation(null);
+            setSelectedOperation(null);
           }
           break;
         default:
-          if (currentInput !== "") {
-            setOperation(button);
-            setFirstInput(parseFloat(currentInput));
-            setCurrentInput("");
-          }
           break;
       }
     }

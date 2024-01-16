@@ -5,6 +5,14 @@ body {
   height: 100%;
   width: 100%;
 }
+@keyframes button-click-animation {
+  from {
+    background-color: initial;
+  }
+  to {
+    background-color: lightgray;
+  }
+}
 body {
   background: black;
   background-repeat: no-repeat;
@@ -67,6 +75,7 @@ body {
   width: 78px;
   height: 78px;
   border: 0px;
+  animation: button-click-animation 0.3s;
 }
 
 .number {
@@ -142,4 +151,5 @@ body {
   font-weight: 400;
   line-height: normal;
   border: 0px;
+  animation: button-click-animation 0.3s;
 }
